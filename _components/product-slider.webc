@@ -1,0 +1,129 @@
+<section class="splide no-js" aria-label="Product Images">
+	<div class="splide__track">
+		<ul class="splide__list">
+			<li class="splide__slide"></li>
+			<li class="splide__slide">
+				<a
+					href="/1.webp"
+					target="_blank"
+					data-pswp-width="1040"
+					data-pswp-height="692"
+				>
+					<img
+						class="splide__img"
+						src="/1.webp"
+						alt="Three Neuthy skincare products, a cleanser with a pump bottle, a serum in a dropper bottle and a moisturizer in a jar, on a wooden platform."
+						width="1040"
+						height="692"
+					/>
+				</a>
+			</li>
+			<li class="splide__slide">
+				<a
+					href="/2.webp"
+					target="_blank"
+					data-pswp-width="1040"
+					data-pswp-height="692"
+				>
+					<img
+						class="splide__img"
+						src="/2.webp"
+						alt="Three Neuthy skincare products, a cleanser with a pump bottle, a serum in a dropper bottle and a moisturizer in a jar wit the lid off.."
+					/>
+				</a>
+			</li>
+			<li class="splide__slide">
+				<a
+					href="/3.webp"
+					target="_blank"
+					data-pswp-width="1040"
+					data-pswp-height="692"
+				>
+					<Image
+						class="splide__img"
+						src="/3.webp"
+						alt="An unmarked serum dropper bottle on a white marble surface."
+						width="1040"
+						height="692"
+					/>
+				</a>
+			</li>
+		</ul>
+	</div>
+</section>
+<link
+	data-gaw-remove
+	webc:keep
+	rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.4/css/splide.min.css"
+	integrity="sha512-KhFXpe+VJEu5HYbJyKQs9VvwGB+jQepqb4ZnlhUF/jQGxYJcjdxOTf6cr445hOc791FFLs18DKVpfrQnONOB1g=="
+	crossorigin="anonymous"
+	referrerpolicy="no-referrer"
+/>
+<link
+	data-gaw-remove
+	webc:keep
+	rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css"
+	integrity="sha512-LFWtdAXHQuwUGH9cImO9blA3a3GfQNkpF2uRlhaOpSbDevNyK1rmAjs13mtpjvWyi+flP7zYWboqY+8Mkd42xA=="
+	crossorigin="anonymous"
+	referrerpolicy="no-referrer"
+/>
+<script webc:bucket="gaw" type="module">
+	import Splide from "https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.4/js/splide.esm.js";
+	import Lightbox from "https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe-lightbox.esm.min.js";
+	import PhotoSwipe from "https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.esm.min.js";
+
+	const splideEl = document?.querySelector(".splide");
+	splideEl.classList.remove("no-js");
+
+	new Splide(".splide", {
+		autoWidth: true,
+	}).mount();
+
+	const lightbox = new Lightbox({
+		gallery: ".splide",
+		children: "a",
+		pswpModule: () => PhotoSwipe,
+	});
+	lightbox.init();
+</script>
+
+<style>
+	.splide {
+		visibility: visible;
+	}
+
+	.no-js .splide__track {
+		overflow-x: auto;
+	}
+
+	.splide__track,
+	.splide__list {
+		padding: 0;
+	}
+
+	.splide__img {
+		inline-size: 80vw;
+		max-inline-size: 100vh;
+		block-size: auto;
+		visibility: visible;
+	}
+
+	.splide__arrow {
+		background: var(--color-background);
+	}
+
+	.splide__arrow svg {
+		fill: var(--color-text);
+	}
+
+	.splide__pagination__page {
+		background-color: var(--color-background);
+		opacity: 1;
+	}
+
+	.splide__pagination__page.is-active {
+		background-color: var(--color-text);
+	}
+</style>

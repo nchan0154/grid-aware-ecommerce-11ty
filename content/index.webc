@@ -1,15 +1,29 @@
----js
-// Initialize page data in JavaScript front matter
-let place = "earth";
----
-<hello-component place="world"></hello-component>
-<hello-component :place="place"></hello-component>
+<div id="gaw-info-bar"></div>
+<announcement-bar></announcement-bar>
+<product-slider></product-slider>
+<div class="container">
+	<product-form class="stack"></product-form>
+	<product-tabs></product-tabs>
+</div>
 
-<p><a href="page.webc">Another page</a>.</p>
+<style is:global>
+	#gaw-info-bar {
+		padding: 0 5%;
+	}
+	.container {
+		margin: auto;
+		padding: var(--space-l) 0;
+		inline-size: 90%;
+		max-inline-size: 50ch;
+	}
 
-<!--- is-land: https://www.11ty.dev/docs/plugins/partial-hydration/ --->
-<!---
-	<is-land on:visible>
-		This is an island.
-	</is-land>
---->
+	.container > * + * {
+		display: block;
+		margin-block-start: var(--space-l);
+	}
+
+	#gaw-info-bar:not(:empty) {
+		background-color: #e3eedb;
+		border-block-end: var(--border);
+	}
+</style>
