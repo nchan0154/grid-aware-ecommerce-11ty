@@ -1,7 +1,6 @@
 <section class="splide no-js" aria-label="Product Images">
 	<div class="splide__track">
 		<ul class="splide__list">
-			<li class="splide__slide"></li>
 			<li class="splide__slide">
 				<a
 					href="/1.webp"
@@ -89,7 +88,7 @@
 </script>
 
 <style>
-	.splide {
+	.splide.no-js {
 		visibility: visible;
 	}
 
